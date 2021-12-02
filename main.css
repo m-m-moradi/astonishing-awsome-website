@@ -1,5 +1,7 @@
 /* Adding background image to body */
 body {
+    /* You said 1.must cover all the background 2.there is no particular kind of image considered */
+    /* so we use a tile base image :) */
     background-image: url("./pattern.png");
     background-repeat: repeat;
     background-size: auto;
