@@ -72,6 +72,17 @@ function store_data() {
     load_data(key);
 }
 
+// It is defined to clear data from LocalStorage
+function clear_data() {
+    let key = result.name;
+    window.localStorage.removeItem(key);
+
+    let stored_gender = document.getElementById("stored-gender");
+    let stored_probability = document.getElementById("stored-probability");
+    stored_gender.innerHTML = "";
+    stored_probability.innerHTML = "";
+}
+
 // It is defined to fetch data from the API provider and populate the form with this data.
 // Here the only thing that is going to be populated is gender radio button.
 function fetch_data(name) {
