@@ -1,3 +1,8 @@
+body {
+    background-image: url("./pattern.png");
+    background-repeat: repeat;
+    background-size: auto;
+}
 /* It is defined to be used on the most outer div. */
 .container {
     /* positioning the div in center of the page (vertically and horizontally). */
@@ -10,6 +15,7 @@
     border: 1px solid black;
     width: 520px;
     height: 300px;
+    background-color: rgba(134, 206, 248, 0.5);
     /* using grid system (2 columns, and 100px rows) */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -18,19 +24,19 @@
 }
 
 /* It is defined to be set the border of input text field. */
-.input-text{
+.input-text {
     border: 1px solid black;
 }
 
 /* It is defined to be style all buttons (Submit, Save, Clear). */
 .custom-btn {
-  background-color: white;
-  color: black;
-  border: 1.5px solid #555555;
-  border-radius: 3px;
-  width: 4rem; 
-  height: 1.5rem;
-  cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 1.5px solid #555555;
+    border-radius: 3px;
+    width: 4rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
 /* It is defined to keep each element of form (text input, radio btn, buttons) away from the borders of the container. */
@@ -38,16 +44,14 @@
 .padder {
     padding-left: 2rem;
     padding-bottom: 1rem;
-
 }
 
 /* It is defined to style the box showing the api results(the box under "prediction" text). */
 .prediction-box {
     width: 180px;
     height: 50px;
-    background-color: white;
+    background-color: inherit;
 }
-
 
 /* It is defined to style the box showing the stored results(the box containing "saved answers" text). */
 .stored-box {
@@ -55,13 +59,11 @@
     margin-top: 22px;
     width: 180px;
     height: 130px;
-    background-color: white;
+    background-color: inherit;
     border: 1px dashed #555555;
 }
 
 /* It is used to style the text in stored box: "saved answers" */
-/* There is catch here, I used to separate div to divide "saved answers" because of the image in requirements PDf. */
-/* I could show that text in one line but because of PDF, I divided that in two div. so this class is used to refine the margin of those tow divs. */
 .stored-heading {
     margin: 0;
 }
@@ -72,7 +74,6 @@
     margin-bottom: 10px;
     position: absolute;
     bottom: 0px;
-
 }
 
 /* Because I changed the color and background color of all button, I must change the color and background 

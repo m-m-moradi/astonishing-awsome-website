@@ -19,7 +19,7 @@ let result = null;
 
 // Validate name 
 // length between 1 and 255
-// only lowercase and uppercase english letters
+// only lowercase and uppercase english letters and spaces
 function validate_form(name) {
     let reg_expr = /^[a-zA-Z ]{1,255}$/;
     return reg_expr.test(name);

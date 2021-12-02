@@ -5,8 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./main.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
         <script src="./main.js"></script>
         <title>Document</title>
+        <style>
+            body {
+                font-family: "Roboto Slab", serif;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -41,8 +49,7 @@
                     <div id="result-probability"></div>
                 </div>
                 <div class="stored-box">
-                    <h2 class="stored-heading">Saved</h2>
-                    <h2 class="stored-heading">Answer</h2>
+                    <h2 class="stored-heading">Saved Answer</h2>
                     <div id="stored-gender"></div>
                     <div id="stored-probability"></div>
                     <button class="custom-btn clear-btn-position" type="button" id="clear" onclick="clear_data()">Clear</button>
