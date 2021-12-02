@@ -5,21 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./main.css" rel="stylesheet" />
-        <title>Document</title>
         <script src="./main.js"></script>
+        <title>Document</title>
     </head>
-    <script>
-        function swapiExec() {
-            fetch("https://swapi.dev/api/people/1/")
-                .then((resp) => resp.json())
-                .then((data) => console.log(JSON.stringify(data)));
-        }
-    </script>
     <body>
         <div class="center container">
             <div>
                 <h2 class="padder">Mr. or Ms. ?</h2>
-                <form name="name-form" onsubmit="form_validation(event)">
+                <form name="name-form" onsubmit="submit_form(event)">
                     <div class="padder">
                         <label for="name" style="padding-right: 10px">Name: </label>
                         <input type="text" id="name" name="name" size="15" class="input-text" />
@@ -37,16 +30,21 @@
                     </div>
 
                     <div class="padder">
-                        <input type="button" class="custom-btn" value="Save" id="save" onclick="swapiExec()" />
+                        <input type="button" class="custom-btn" value="Save" id="save" onclick="save_data()" />
                     </div>
                 </form>
             </div>
             <div>
                 <h2>Prediction</h2>
-                <div class="prediction-box" id="prediction-box"></div>
+                <div class="prediction-box" id="prediction-box">
+                    <div class="result-item" id="result-gender"></div>
+                    <div class="result-item" id="result-probability"></div>
+                </div>
                 <div class="saved-box">
                     <h2 class="saved-heading">Saved</h2>
                     <h2 class="saved-heading">Answer</h2>
+                    <div class="result-item" id="saved-gender"></div>
+                    <div class="result-item" id="saved-probability"></div>
                     <button class="custom-btn clear-btn-position" type="button" id="clear">Clear</button>
                 </div>
             </div>
