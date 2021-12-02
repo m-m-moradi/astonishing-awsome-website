@@ -17,7 +17,7 @@ class Result {
 // It is defined to be used as "shared state" between function. (like Redux or Vuex)
 let result = null;
 
-// Validate name 
+// Validate name
 // length between 1 and 255
 // only lowercase and uppercase english letters and spaces
 function validate_form(name) {
@@ -25,7 +25,7 @@ function validate_form(name) {
     return reg_expr.test(name);
 }
 
-// It is defined to clear all information that is displaying on screen, 
+// It is defined to clear all information that is displaying on screen,
 // after submitting a new name to lookup
 function clear_results() {
     result = null; // clear shared state
@@ -48,7 +48,7 @@ function clear_results() {
 function load_data(name) {
     let stored_data = window.localStorage.getItem(name);
     if (stored_data != null) {
-        stored_data = JSON.parse(stored_data)
+        stored_data = JSON.parse(stored_data);
         // technically there is no need for below line
         // it is written, only because the same logic has became mandatory in
         // requirements (in fetching stage - using Object instead of json)
@@ -111,11 +111,11 @@ function fetch_data(name) {
                 result_gender.innerHTML = result.gender;
                 result_probability.innerHTML = result.probability;
             } else {
-                console.log("sorry we cant find out what gender is this?");
+                notify("Sorry, we cant find out gender of the name.");
             }
         })
         .catch((reason) => {
-            console.log(reason);
+            notify("Sorry, we have some problems with API call. ");
         });
 }
 
@@ -129,11 +129,29 @@ async function submit_form(event) {
             fetch_data(name);
             load_data(name);
         } else {
-            console.log("please provide valid name");
+            notify("Only english letters and spaces up to 255 characters is allowed.");
         }
     } catch (e) {
-        console.log(e);
+        notify("Sorry, we have some problems with submitting the form. ");
     } finally {
         event.preventDefault();
     }
+}
+
+// It is defined to show the notification bar with the message provided
+function notify(message) {
+    let notification_bar = document.getElementById("notification-bar");
+    let notification_message = document.getElementById("notification-message");
+
+    notification_bar.style.display = "block";
+    notification_message.innerHTML = message;
+}
+
+// It is defined to close the notification bar (by clicking inside it)
+function close_notification() {
+    let notification_bar = document.getElementById("notification-bar");
+    let notification_message = document.getElementById("notification-message");
+
+    notification_bar.style.display = "none";
+    notification_message.innerHTML = "";
 }

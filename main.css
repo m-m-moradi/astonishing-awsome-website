@@ -1,3 +1,4 @@
+/* Adding background image to body */
 body {
     background-image: url("./pattern.png");
     background-repeat: repeat;
@@ -81,4 +82,41 @@ body {
 .custom-btn:active {
     background-color: #999;
     color: white;
+}
+
+/* It is defined to style the notification bar */
+.notification-bar {
+    /* positioning the bar at the bottom of the page */
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    /* styling */
+    border-radius: 15px;
+    border: 2px solid rgb(88, 37, 37);
+    width: 520px;
+    height: 50px;
+    background-color: rgb(190, 135, 127);
+    cursor: pointer;
+
+    /* by default notification bar is not visible */
+    /* we change this attribute every time that we want to show something on the bar */
+    display: none;
+
+}
+
+/* This styling is defined to make it clear to user that he is able to close it */
+.notification-bar:hover {
+    background-color: rgb(219, 189, 184);
+    border: 2px solid rgb(133, 62, 62);
+}
+
+/* This is defined to style the message inside the notification bar */
+.notification-message {
+    display: inline-block;
+    padding-top: 12px;
+    padding-left: 20px;
+    color: rgb(80, 24, 24);
 }
