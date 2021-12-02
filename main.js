@@ -15,26 +15,26 @@ function clear_form() {
     let result_gender = document.getElementById("result-gender");
     let result_probability = document.getElementById("result-probability");
     let radios = document.forms["name-form"]["gender"];
-    let saved_gender = document.getElementById("saved-gender");
-    let saved_probability = document.getElementById("saved-probability");
+    let stored_gender = document.getElementById("stored-gender");
+    let stored_probability = document.getElementById("stored-probability");
 
     for (var i = 0, iLen = radios.length; i < iLen; i++) {
         radios[i].checked = false;
     }
     result_gender.innerHTML = "";
     result_probability.innerHTML = "";
-    saved_gender.innerHTML = "";
-    saved_probability.innerHTML = "";
+    stored_gender.innerHTML = "";
+    stored_probability.innerHTML = "";
 }
 
 function load_data(name) {
-    let saved_data = JSON.parse(window.localStorage.getItem(name));
-    if (saved_data != null) {
-        let saved = new Result(saved_data["name"], saved_data["gender"], saved_data["probability"], saved_data["count"]);
-        let saved_gender = document.getElementById("saved-gender");
-        let saved_probability = document.getElementById("saved-probability");
-        saved_gender.innerHTML = saved.gender;
-        saved_probability.innerHTML = saved.probability;
+    let stored_data = JSON.parse(window.localStorage.getItem(name));
+    if (stored_data != null) {
+        let stored = new Result(stored_data["name"], stored_data["gender"], stored_data["probability"], stored_data["count"]);
+        let stored_gender = document.getElementById("stored-gender");
+        let stored_probability = document.getElementById("stored-probability");
+        stored_gender.innerHTML = stored.gender;
+        stored_probability.innerHTML = stored.probability;
     }
 }
 
@@ -80,7 +80,7 @@ async function submit_form(event) {
     }
 }
 
-function save_data() {
+function store_data() {
     let selected_male = document.getElementById("male").checked;
     let selected_female = document.getElementById("female").checked;
 

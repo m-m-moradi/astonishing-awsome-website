@@ -42,7 +42,7 @@
     background-color: white;
 }
 
-.saved-box {
+.stored-box {
     position: relative;
     margin-top: 22px;
     width: 180px;
@@ -51,7 +51,7 @@
     border: 1px dashed #555555;
 }
 
-.saved-heading {
+.stored-heading {
     margin: 0;
 }
 
