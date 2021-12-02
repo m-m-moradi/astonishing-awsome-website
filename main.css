@@ -1,25 +1,28 @@
-.center {
+/* It is defined to be used on the most outer div. */
+.container {
+    /* positioning the div in center of the page (vertically and horizontally). */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.container {
+    /* styling the shape */
     border-radius: 35px;
     border: 1px solid black;
     width: 520px;
     height: 300px;
+    /* using grid system (2 columns, and 100px rows) */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
 
+/* It is defined to be set the border of input text field. */
 .input-text{
     border: 1px solid black;
 }
 
+/* It is defined to be style all buttons (Submit, Save, Clear). */
 .custom-btn {
   background-color: white;
   color: black;
@@ -30,18 +33,23 @@
   cursor: pointer;
 }
 
+/* It is defined to keep each element of form (text input, radio btn, buttons) away from the borders of the container. */
+/* It is used on div elements, each element of form is wrapped in a div and then we use this to padding that div. */
 .padder {
     padding-left: 2rem;
     padding-bottom: 1rem;
 
 }
 
+/* It is defined to style the box showing the api results(the box under "prediction" text). */
 .prediction-box {
     width: 180px;
     height: 50px;
     background-color: white;
 }
 
+
+/* It is defined to style the box showing the stored results(the box containing "saved answers" text). */
 .stored-box {
     position: relative;
     margin-top: 22px;
@@ -51,10 +59,15 @@
     border: 1px dashed #555555;
 }
 
+/* It is used to style the text in stored box: "saved answers" */
+/* There is catch here, I used to separate div to divide "saved answers" because of the image in requirements PDf. */
+/* I could show that text in one line but because of PDF, I divided that in two div. so this class is used to refine the margin of those tow divs. */
 .stored-heading {
     margin: 0;
 }
 
+/* According to the PDF, "Clear" button is in the bottom of "saved answers" with a little bit margin from below. */
+/* This class is used to push the clear button to bottom of that box. */
 .clear-btn-position {
     margin-bottom: 10px;
     position: absolute;
@@ -62,13 +75,9 @@
 
 }
 
+/* Because I changed the color and background color of all button, I must change the color and background 
+   color of those buttons when they clicked. */
 .custom-btn:active {
     background-color: #999;
     color: white;
-}
-
-
-.result-item {
-    font-size: 1rem;
-    margin-bottom: 5px;
 }

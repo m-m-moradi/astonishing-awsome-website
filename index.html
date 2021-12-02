@@ -9,7 +9,7 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="center container">
+        <div class="container">
             <div>
                 <h2 class="padder">Mr. or Ms. ?</h2>
                 <form name="name-form" onsubmit="submit_form(event)">
@@ -37,14 +37,14 @@
             <div>
                 <h2>Prediction</h2>
                 <div class="prediction-box" id="prediction-box">
-                    <div class="result-item" id="result-gender"></div>
-                    <div class="result-item" id="result-probability"></div>
+                    <div id="result-gender"></div>
+                    <div id="result-probability"></div>
                 </div>
                 <div class="stored-box">
                     <h2 class="stored-heading">Saved</h2>
                     <h2 class="stored-heading">Answer</h2>
-                    <div class="result-item" id="stored-gender"></div>
-                    <div class="result-item" id="stored-probability"></div>
+                    <div id="stored-gender"></div>
+                    <div id="stored-probability"></div>
                     <button class="custom-btn clear-btn-position" type="button" id="clear" onclick="clear_data()">Clear</button>
                 </div>
             </div>

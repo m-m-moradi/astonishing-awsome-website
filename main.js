@@ -28,7 +28,7 @@ function validate_form(name) {
 // It is defined to clear all information that is displaying on screen, 
 // after submitting a new name to lookup
 function clear_results() {
-    result = null;
+    result = null; // clear shared state
     let result_gender = document.getElementById("result-gender");
     let result_probability = document.getElementById("result-probability");
     let radios = document.forms["name-form"]["gender"];
@@ -49,6 +49,9 @@ function load_data(name) {
     let stored_data = window.localStorage.getItem(name);
     if (stored_data != null) {
         stored_data = JSON.parse(stored_data)
+        // technically there is no need for below line
+        // it is written, only because the same logic has became mandatory in
+        // requirements (in fetching stage - using Object instead of json)
         let stored = new Result(stored_data["name"], stored_data["gender"], stored_data["probability"], stored_data["count"]);
         let stored_gender = document.getElementById("stored-gender");
         let stored_probability = document.getElementById("stored-probability");
@@ -59,6 +62,8 @@ function load_data(name) {
 }
 
 // It is defined to store form data in LocalStorage
+// "gender" must be picked up from the radio buttons
+// "name" is available in global "result" variable (it also can be picked up by document.GetElementByID from the form)
 function store_data() {
     let selected_male = document.getElementById("male").checked;
     let selected_female = document.getElementById("female").checked;
@@ -73,6 +78,8 @@ function store_data() {
 }
 
 // It is defined to clear data from LocalStorage
+// Note: clear_results is used to clear screen, but this function is used to clear data from LocalStorage
+// After clearing data, we must clear "saved answers" section to inform the user that operation has been done.
 function clear_data() {
     let key = result.name;
     window.localStorage.removeItem(key);
